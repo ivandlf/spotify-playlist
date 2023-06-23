@@ -1,0 +1,21 @@
+name: Update Spotify Playlist
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v2
+
+    - name: Update Spotify Playlist
+      run: |
+        echo "spotify:playlist:YOUR_PLAYLIST_ID" > playlist.txt
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add playlist.txt
+        git commit -m "Update Spotify playlist"
+        git push
