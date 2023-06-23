@@ -13,7 +13,7 @@ jobs:
 
     - name: Update Spotify Playlist
       run: |
-        echo "spotify:playlist:YOUR_PLAYLIST_ID" > playlist.txt
+        echo "spotify:playlist:https://spotify-recently-played-readme.vercel.app/api?user=31i6yjt4ufubszjzug2trqw37jwe" > playlist.txt
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add playlist.txt
